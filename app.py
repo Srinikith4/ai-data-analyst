@@ -6,23 +6,23 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import re
 
-# -------------------------------
+
 # PAGE CONFIG
-# -------------------------------
+
 
 st.set_page_config(page_title="AI Data Analyst", layout="wide")
 
 st.title("AI Data Analyst — Shopping Trends Dashboard")
 
-# -------------------------------
+
 # LOAD DATA
-# -------------------------------
+
 
 df = pd.read_csv("shopping_trends.csv")
 
-# -------------------------------
+
 # ML TRAINING DATA
-# -------------------------------
+
 
 training_data = [
 
@@ -60,9 +60,9 @@ X = vectorizer.fit_transform(questions)
 model = LogisticRegression()
 model.fit(X, labels)
 
-# -------------------------------
+
 # SIDEBAR FILTERS
-# -------------------------------
+
 
 st.sidebar.header("Filters")
 
@@ -90,16 +90,16 @@ filtered_df = df[
     (df["Season"].isin(season_filter))
 ]
 
-# -------------------------------
+
 # DATA PREVIEW
-# -------------------------------
+
 
 with st.expander("Dataset Preview"):
     st.dataframe(filtered_df.head())
 
-# -------------------------------
+
 # KEY METRICS
-# -------------------------------
+
 
 st.subheader("Key Metrics")
 
@@ -118,9 +118,9 @@ c4.metric("Top Location", top_location)
 
 st.divider()
 
-# -------------------------------
+
 # DASHBOARD
-# -------------------------------
+
 
 st.subheader("Insights Dashboard")
 
@@ -194,9 +194,9 @@ with col4:
 
 st.divider()
 
-# -------------------------------
+
 # SMART QUERY PARSER
-# -------------------------------
+
 
 
 def parse_query_filters(query):
@@ -236,9 +236,9 @@ def detect_top_n(query):
 
     return 10
 
-# -------------------------------
+
 # AI BOT
-# -------------------------------
+
 
 
 st.subheader("AI Data Analyst Bot")
@@ -269,9 +269,9 @@ if user_question:
 
     top_n = detect_top_n(user_question)
 
-    # -------------------
+ 
     # LOCATION
-    # -------------------
+   
 
     if intent == "location":
 
@@ -293,9 +293,9 @@ if user_question:
 
         st.plotly_chart(fig, use_container_width=True, key="bot_location")
 
-    # -------------------
+   
     # PRODUCT
-    # -------------------
+    
 
     elif intent == "product":
 
@@ -312,9 +312,9 @@ if user_question:
 
         st.plotly_chart(fig, use_container_width=True, key="bot_product")
 
-    # -------------------
+    
     # CATEGORY
-    # -------------------
+    
 
     elif intent == "category":
 
@@ -331,9 +331,9 @@ if user_question:
 
         st.plotly_chart(fig, use_container_width=True, key="bot_category")
 
-    # -------------------
+  
     # SEASON
-    # -------------------
+    
 
     elif intent == "season":
 
@@ -350,9 +350,9 @@ if user_question:
 
         st.plotly_chart(fig, use_container_width=True, key="bot_season")
 
-    # -------------------
+   
     # GENDER
-    # -------------------
+    
 
     elif intent == "gender":
 
@@ -368,9 +368,9 @@ if user_question:
 
         st.plotly_chart(fig, use_container_width=True, key="bot_gender")
 
-    # -------------------
+   
     # AGE
-    # -------------------
+    
 
     elif intent == "age":
 
