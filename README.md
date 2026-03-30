@@ -80,6 +80,12 @@ ai-data-analyst/
 
 This project demonstrates a hybrid approach combining Machine Learning and rule-based logic for building a practical AI-driven analytics tool.
 
+# Preview
+<img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/618c2c97-d562-4efb-a22b-4466cac11398" />
+
+<img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/46d9695e-b896-4862-bfee-26754adecfc3" />
+
+
 
 
 J.V.Sri Nikith
